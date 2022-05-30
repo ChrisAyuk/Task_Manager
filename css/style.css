@@ -1,0 +1,337 @@
+*{
+	margin: 0 auto 0 auto;
+	text-align:left;
+}
+
+body{
+	margin:0;
+	padding:0;
+	text-align:left;
+	font-size:13px;
+	font-family:arial,helvetica, sens-serif;
+	color:#000000;
+	background-color:#000000;
+	 
+}
+
+a{
+	text-decoration:none;
+}
+
+table,tr,td,th{
+	margin:0;
+}
+
+table{
+	padding:10px 0;
+}
+
+th{
+	text-align:center;
+}
+
+td{
+	padding:5px 20px;
+}
+
+h2{
+	padding-bottom:10px;
+}
+
+h3{
+	font-size:16px;
+	font-weight:bold;
+	padding:10px 0;
+	color:#054dbc;
+}
+
+h4{
+	font-size:15px;
+	font-weight:bold;
+	padding-bottom:7px;
+	color:#054dbc;
+}
+
+p{
+	margin:10px 0;
+}
+
+label{
+	display:inline-block;
+	width:150px;
+}
+
+/* Main styles */
+#container{
+	width:960px;
+	overflow:auto;
+}
+
+header{
+	width:960px;
+	height:85px;
+	 
+	 
+}
+
+header h1{
+	float:left;
+	color:#ffffff;
+	font-size:43px;
+	padding:20px 0 0 20px;
+}
+
+
+
+header h2{
+	float:right;
+	color:#A9D1FA;
+	padding:40px 20px 0 0;
+}
+
+
+
+header h2 span.white-text{
+	color:#ffffff;
+	 
+}
+
+nav#menu{
+	display:block;
+	float:left;
+	clear:both;
+	width:960px;
+	height:54px;
+}
+
+nav#menu ul{
+	list-style:none;
+	padding:0;
+	padding-top:18px;
+	margin-left:auto;
+	width:960px;
+}
+
+nav#menu li{
+	list-style:none;
+	padding:0;
+	display: inline;
+}
+
+nav#menu li a,#menu li a:visited{
+	float:left;
+	color:#ffffff;
+	text-decoration:none;
+	text-align:center;
+	font-size:15px;
+	font-weight:bold;
+	padding:0 13px 0 13px;
+}
+
+nav#leftmenu{
+	margin-top:15px;
+	width:190px;
+	float:left;
+	background:#1C478E;
+	border-radius:10px;
+	padding: 15px 20px 10px 10px;
+}
+
+nav#leftmenu ul{
+	list-style:none;
+	padding:0;
+}
+
+nav#leftmenu  li{
+	list-style:none;
+	padding:15px 0 8px 0;
+	border-bottom:1px dashed #fff;
+}
+
+nav#leftmenu a,nav#leftmenu a:visited{
+	color:#ffffff;
+	text-decoration:none;
+	font-weight:bold;
+	font-size:14px;
+}
+
+nav#leftmenu h3{
+	color:#ffffff;
+	padding:0;
+	padding-bottom:8px;
+	border-bottom:#fff solid 2px;
+	font-size:16px;
+}
+
+section{
+	display:block;
+	width:680px; 
+	/*margin-top:15px;*/
+	float:left;
+	background:#ffffff;
+	/*border-radius:10px;*/
+	/*border:6px solid #1C478E;*/
+	padding:15px;
+	/*margin-left:15px;*/
+}
+
+section#about{
+	width:830px;
+	height:500px;
+	border-radius:10px; 
+	border:6px solid #1C478E;	
+}
+
+section#dashboard{
+	width:960px;
+	height:500px;
+	border-radius:10px; 
+	border:6px solid #1C478E;	
+	margin-left:15px; 
+	margin-top:15px; 
+	 
+}
+
+
+
+section#one{
+	background:#fdff00;
+	width:400px;
+	height:120px;
+	
+}
+
+section#one:hover{
+	background:	#ffe6ee;
+	 
+}
+
+section#two{
+	background:#b0d8d6;
+	width:400px;
+	height:120px;
+}
+
+section#two:hover{
+	background:#dad1ec;
+	 
+}
+
+section#three{
+	background:#efa299;
+	width:400px;
+	height:120px;
+}
+
+section#three:hover{
+	background:	#d2ddcf;
+	 
+}
+
+section#four{
+	background:#aaaaaa;
+	width:400px;
+	height:120px;
+}
+
+section#four:hover{
+	background:#73d4f4;
+	 
+}
+
+section#five{
+	background:#bf9fb0;
+	width:400px;
+	height:120px;
+}
+
+section#five:hover{
+	background:#ffffe4;
+	 
+}
+
+section#six{
+	background:#5ddf9b;
+	width:400px;
+	height:120px;
+}
+
+section#six:hover{
+	background:	#feecd4;
+	 
+}
+
+.float{
+	float:right;
+	margin:15px;
+}
+
+.signin{
+	 
+	 float:right;
+	 margin-top:-30px;
+
+}
+
+.signup{
+	 
+	 float:right;
+	 margin-right:90px;
+	 margin-top:-30px;
+
+}
+footer{
+	width:100%;
+	background:#000;
+	color:#fff;
+	height:30px;
+	text-align:center;
+	margin-top:20px;
+	padding-top:15px;
+}
+
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.buttongreen {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+
+.buttongreen:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+form.form{
+	width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
