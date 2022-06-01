@@ -44,13 +44,13 @@
 			<?php 
 				 
 				$id = $_GET['id'];
-				$row = mysqli_query($con, "SELECT * FROM user where user_id = '$id'");
+				$row = mysqli_query($con, "SELECT * FROM intern where intern_id = '$id'");
 				$st_row =mysqli_fetch_array($row);
 				 
 			?>
 			
 			<form method = "post" action = "pupdateUser.php">
-				 <input type = "hidden" name = "id" value = "<?php echo $st_row['user_id'] ?>"> 
+				 <input type = "hidden" name = "id" value = "<?php echo $st_row['intern_id'] ?>"> 
 				
 				
 				<p>
@@ -59,25 +59,13 @@
 				</p>
 				<p>
 					<label>User Email:
-						<input type = "email" name = "userEmail"  value ="<?php echo $st_row['user_email'] ?>" required/></label>
+						<input type = "email" name = "userEmail"  value ="<?php echo $st_row['int_email'] ?>" required/></label>
 				</p>
 				<p>
 					<label>User Password:
-						<input type = "password" name = "userPass"  value ="<?php echo $st_row['user_password'] ?>" required/></label>
+						<input type = "password" name = "userPass"  value ="<?php echo $st_row['int_pass'] ?>" required/></label>
 				</p>
-				<p>
-					<label>User Status:
-						<select name = "status">
-							<option value ="active">Active</option>
-							<option value ="inactive">Inactive</option></label>
-						</select>
-				</p>
-				<p>
-					<label>User Type:
-						<select name = "type">
-							<option value ="1">User</option>
-							<option value ="2">Admin</option></label>
-						</select>
+				
 				</p>
 				<p>
 					<input type = "submit" value = "Update User" name = "btnupdateUser"/>

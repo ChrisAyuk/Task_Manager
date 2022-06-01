@@ -18,7 +18,7 @@ a{
 	text-decoration:none;
 }
 
-table,tr,td,th{
+/*table,tr,td,th{
 	margin:0;
 }
 
@@ -33,7 +33,7 @@ th{
 
 td{
 	padding:5px 20px;
-}
+}*/
  
 
 
@@ -72,12 +72,12 @@ table#view{
 	height: auto;
 	border:1px solid gray;	
 	border-collapse:collapse;
-	background-color: lightskyblue;
+	background-color: greenyellow;
 	
 }
 
 table#view td {
-	width: 180px;
+	width: auto;
 	height : 70px;
 	border-collapse: collapse;
 	border:1px solid #888;
@@ -86,6 +86,9 @@ table#view td {
 	float : center;
 }
 
+table#view td#state{
+	color: red;
+}
 
 #calendar{
 position:absolute center;

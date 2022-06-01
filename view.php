@@ -1,6 +1,5 @@
 <?php
   include("connection.php");
-
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +47,8 @@
 			<th>DateAdded</th>
 			<th>Due Date</th>
 			<th>Details</th>
-			<th>Delete</th>
+			<th>State</th>
+			<th>Edit</th>
 		</tr>
 <?php
    
@@ -60,7 +60,7 @@
 
 	$info = mysqli_query($con, $sql);
 	
-	//$userid = $_session['login_user']; //not sure whether this will work
+	$userid = $_SESSION['login_user']; //not sure whether this will work
    
 	while($row= mysqli_fetch_array($info))
 	{
@@ -69,17 +69,17 @@
 	   echo "<td>".$row['TaskID']."</td>";
 	   echo "<td>".$row['Task']."</td>";
 	   echo "<td>".$row['DateAdded']."</td>";
-	   //echo "<td>".$row['TimeStart']."</td>";
 	   echo "<td>".$row['due_date']."</td>";
 	   echo "<td>".$row['Details']."</td>";
-	   echo "<td><a href=remove.php?id=".$row['TaskID'].">Delete</a></td>";
+	   echo "<td id='state'>".$row['status']."</td>";
+	   echo "<td><a href=eventeditor.php?id=".$row['TaskID'].">Edit</a></td>";
 	   echo "</tr>";
 	}
 	
 	
    ?>
    <tr>
-   <td><input type='button' value='Return' name='back' onclick="window.location.href='view.php'"></td>
+   <td><input type='button' value='Add Task' name='add' onclick="window.location.href='eventadder.php'"></td>
    </tr>
    
    </table>

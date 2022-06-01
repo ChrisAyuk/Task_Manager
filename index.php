@@ -8,7 +8,7 @@
 <body>
 	<div id="container">
 		<header>
-			<a href = "index.php"><h1>Daily Task Planner</h1></a>
+			<a href = "index.php"><h1>Iwomi Tasking</h1></a>
 			
 		</header>
 		 

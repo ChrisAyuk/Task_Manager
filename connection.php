@@ -7,11 +7,6 @@
 	$con = mysqli_connect($servername,$username,$password);
 	mysqli_select_db($con, $db);
 	
-	$sql = "SELECT * FROM user";
-	$result = mysqli_query($con, $sql) or die(mysqli_error($con)); 
-  	$row =  mysqli_fetch_assoc($result);
-	$_SESSION['login_user'] = $row['username'];
-	
 	/*
 	//create database
 	$sql = "CREATE DATABASE task";

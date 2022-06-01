@@ -50,12 +50,11 @@
 			<table border= "1"> 
 				<tr>
 				<thead>
-					<th>User ID</th>
+					<th>Intern ID</th>
 					<th>User Name</th>
-					<th>User Email</th>
-					<th>User Password</th>
-					<th>User Status</th>
-					<th>User Type</th>
+					<th>Email</th>
+					<th>Password</th>
+					<th>Team</th>
 					<th>Action</th>
 				</thead>
 				</tr>
@@ -63,20 +62,19 @@
 			
 			<?php
 		 
-			$query="SELECT * FROM user";
+			$query="SELECT * FROM intern";
 			$result=mysqli_query($con, $query);
 			
 			mysqli_close($con);
 			
 			while($row = mysqli_fetch_array($result)){
 				echo "<tr>
-						<td>",$row['user_id'],"</td>
+						<td>",$row['intern_id'],"</td>
 						<td>",$row['username'],"</td>
-						<td>",$row['user_email'],"</td>
-						<td>",$row['user_password'],"</td>
-						<td>",$row['user_status'],"</td>
-						<td>",$row['user_type'],"</td>
-						<td><a href ='updateUser.php? epr=update&id=",$row['user_id'],"'>Edit</a></td> 
+						<td>",$row['int_email'],"</td>
+						<td>",$row['int_pass'],"</td>
+						<td>",$row['team_id'],"</td>
+						<td><a href ='updateUser.php? epr=update&id=",$row['intern_id'],"'>Edit</a></td> 
 					</tr>";
 				
 			}
