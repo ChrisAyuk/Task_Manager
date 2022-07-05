@@ -44,29 +44,25 @@
 			<h2>Create Itern</h2>
 			<form method = "post" action = "pcreateUser.php">
 				<p>
-					<label>User name:
-					<input type = "text" name = "username" required/></label>
+					<label>User name:	<input type = "text" name = "username" size="15" required/></label>
 				</p>
 				
 				<p>
-					<label>User Email:
-					<input type = "email" name = "userEmail" required/></label>
+					<label>User Email:	<input type = "email" name = "userEmail" size="15" required/></label>
 				</p>
 				
 				<p>
-					<label>User Password:
-					<input type = "password" name = "userPass" required/></label>
+					<label>User Password:	<input type = "password" name = "userPass" size="15" required/></label>
 				</p>
 				
 				<p>
-					<label>Supervisor:
-					<input type="text" name="mentor" value="<?php echo $_SESSION['login_user'] ?>" readonly/>
+					<label>Supervisor:	<input type="text" name="mentor" value="<?php echo $_SESSION['login_user'] ?>" readonly/>
 					</select>
 				</p>
 				
 				<p>
-					<input type = "submit" value = "Create User" name = "btncreateUser"/>
-					<input type = "reset" value = "Clear"/>
+					<input type = "submit" value = "Create User" name = "btncreateUser" class="append"/>
+					<input type = "reset" value = "Clear" class="delete"/>
 				
 				</p>
 			

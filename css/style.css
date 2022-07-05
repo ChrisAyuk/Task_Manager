@@ -1,3 +1,7 @@
+html{
+	overflow: auto;
+}
+
 *{
 	margin: 0 auto 0 auto;
 	text-align:left;
@@ -9,7 +13,6 @@ body{
 	padding:0;
 	text-align:left;
 	font-size:11pt;
-	font-family:Georgia, 'Times New Roman', Times, serif;
 	color:#000000;
 	background-color: #ffffff;
 	align-items: center;
@@ -103,7 +106,7 @@ nav#menu{
 	width:100%;
 	height:auto;
 	background-color: #ffffff;
-	box-shadow: 3px 3px 15px 20px rgb(228, 228, 228);
+	box-shadow: 0px 1px 5px 8px rgb(228, 228, 228);
 }
 nav#homepic{
 	float: left;
@@ -134,9 +137,10 @@ nav#menu li a,#menu li a:visited{
 }
 
  div#container{
+	/* position: relative; */
 	width:960px;
 	overflow: auto;
-	padding-top: 25px;
+	padding-top: 130px;
 	
 }
 
@@ -151,7 +155,7 @@ section{
 	/*border:6px solid #54782E;*/
 	padding:15px;
 	margin-left:20px;
-	margin-top: 125px;
+	margin-top: 20px;
 }
 
 section#about{
@@ -175,7 +179,8 @@ section#secbox{
 	background:#e4e4e4;
 	width:270px;
 	height:180px;
-	
+	padding-top: 10px;
+	margin-top: 20px;
 }
 
 section#secbox:hover{
@@ -231,6 +236,7 @@ footer{
     cursor: pointer;
 }
 
+
 .buttongreen {
 	border-radius: 5px;
     background-color: white;
@@ -251,7 +257,7 @@ input[type=button], input[type=submit], input[type=reset] {
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
-	border-radius: 5px;
+	border-radius: 3px;
 }
 form.form{
 	width: 100%;

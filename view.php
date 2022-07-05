@@ -45,7 +45,7 @@
 		<table align=center>
 		<tr align= 'center'>
 			<thead>
-				<th>TaskID</th>
+				<!-- <th>TaskID</th> -->
 				<th>Task</th>
 				<th>DateAdded</th>
 				<th>Due Date</th>
@@ -60,23 +60,28 @@
    
 	mysqli_select_db($con, 'task');
 	
-	$sql = "SELECT * FROM eventdata";
+	$userid = $_SESSION['login_id']; //not sure whether this will work
+	$sql = "SELECT * FROM eventdata as t1 inner join assign as t2 on t1.TaskID = t2.task_id where supervisor_id='$userid'";
 
-	$info = mysqli_query($con, $sql);
+	$info = mysqli_query($con, $sql); if (!$info) {
+		printf("Error: %s\n", mysqli_error($con));
+		exit();
+	};
 	
-	//$userid = $_SESSION['login_user']; //not sure whether this will work
    
 	while($row= mysqli_fetch_array($info))
 	{
-	   echo "<tr>";
+		if($row['status']=="NOT DONE"){$class = "undone";}else{$class="done";}
+	   echo "<tr class=".$class.">";
 	   //echo "<td>".$row[php $userid]."</td>"; //not sure whether this will work
-	   echo "<td>".$row['TaskID']."</td>";
+	   //echo "<td>".$row['TaskID']."</td>";
 	   echo "<td>".$row['Task']."</td>";
 	   echo "<td>".$row['DateAdded']."</td>";
 	   echo "<td>".$row['due_date']."</td>";
 	   echo "<td>".$row['Details']."</td>";
-	   echo "<td id='state'>".$row['status']."</td>";
-	   echo "<td><a href=eventeditor.php?id=".$row['TaskID']." class='button'>Edit</a></td>";
+	   echo "<td>".$row['status']."</td>";
+	   echo "<td><a href=eventeditor.php?id=".$row['TaskID']." class='button'>Edit</a>
+	   			<a href=# class='delete'>Delete</a></td>";
 	   echo "</tr>";
 	}
 	
@@ -92,5 +97,5 @@
 	</div><!--container end -->
 	<div style="clear;both"></div>
 </body>
-<!--<h1>Welcome  <?php echo $login_session; ?></h1>-->
+<!--<h1>Welcome <?php echo $login_session; ?></h1>-->
 </html>

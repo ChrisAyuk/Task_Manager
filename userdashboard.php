@@ -5,19 +5,22 @@
 	//mysqli_select_db($con, 'task');
 	$userid = $_SESSION['login_id']; //not sure whether this will work
 
-	$sql = "SELECT * FROM eventdata";
-	$info = mysqli_query($con, $sql);
-
 	//print_r($info);
 
 	//$taskx = "SELECT * FROM assign WHERE int_id = '$userid'";
-	$assign = mysqli_query($con, "SELECT *  FROM assign WHERE int_id = '$userid'");
-	$as_row = mysqli_fetch_array($assign);
-	$as =  $as_row['team_id'];
-	$tname = "SELECT teamName FROM team WHERE team_id = '".$as_row['team_id']."'";
+	$tname = "SELECT * FROM team as t1 inner join grouping as t2 on t1.team_id=t2.team_id WHERE t2.intern_id = '$userid'";
 	$team = mysqli_query($con, $tname);
 	$t_row = mysqli_fetch_array($team);
 
+	$aque = "SELECT *  FROM assign WHERE team_id = '".$t_row['team_id']."' ";
+	$assign = mysqli_query($con, $aque);
+	$as_row = mysqli_fetch_array($assign) or die(mysqli_error($con));
+	$as =  $as_row['team_id'];
+
+	$sql = "SELECT * FROM eventdata as t1 inner join assign as t2 on t1.TaskID=t2.task_id where t2.team_id= '".$t_row['team_id']."' ";
+	$info = mysqli_query($con, $sql)or die(mysqli_error($con));
+	$find = array(array());	
+		
 	$num = mysqli_query($con, "SELECT COUNT(status) AS total FROM eventdata WHERE status = 'DONE'");
 	$numrow = mysqli_fetch_array($num);
 
@@ -122,24 +125,65 @@
 							<td><a href="#" class="button">Edit</a></td>
 						</tr>
 						<?php 
+							$i = 0;
 							while($row= mysqli_fetch_array($info))
-							{
-	  							echo "<tr>";
+							{								
+								if($row['status']=="NOT DONE"){$class = "undone";}else{$class="done";}																		
+	  							echo "<tr class=".$class.">";
 	  							//echo "<td>".$row[php $userid]."</td>"; //not sure whether this will work
 	   							//echo "<td>".$row['TaskID']."</td>";
-	   							echo "<td>".$row['Task']."</td>";
-	   							echo "<td>".$row['DateAdded']."</td>";
-	  							echo "<td>".$row['due_date']."</td>";
-	  							echo "<td>".$row['Details']."</td>";
-	   							echo "<td id='state'>".$row['status']."</td>";
-	   							echo "<td><a href=eventeditor.php?id=".$row['TaskID']." class='button'>Edit</a></td>";
+	   							echo "<td>".$row['Task']."</td>"; $find[0][0] = $row['Task'];
+	   							echo "<td>".$row['DateAdded']."</td>";	$find[0][1] = $row['DateAdded'];
+	  							echo "<td>".$row['due_date']."</td>";	$find[0][2] = $row['due_date']; 
+	  							echo "<td>".$row['Details']."</td>";	$find[0][3] = $row['Details'];
+	   							echo "<td >".$row['status']."</td>";	$find[0][4] = $row['status'];
+	   							echo "<td><div id=".$row['TaskID']." class='button' onclick='appear(this)'>View</div></td>";
 	   							echo "</tr>";
+								
+								$i++;
 							}
+							
 						?>
 					</table>
 				</div>
 			</div>
 		</div>
+
+		<div id="fltab" > 
+			<form method="POST">
+				<h2>Create a Team</h2>
+				<p>
+					<h1>Task:	</h1> <input type="text" name="tname" value="<?php echo $find[0][0] ?>" readonly/>
+				</p>
+				<p>
+					<h1>Date Added:	</h1> <input type="date" name="adate" value="<?php echo $find[0][1] ?>" readonly/>
+				</p>
+				<p>
+					<h1>Due Date:	</h1> <input type="datetime-local" name="fdate" value="<?php echo $find[0][2] ?>" readonly>
+				</p>
+				<p>
+					<h1>Details:	</h1> <textarea name="details" maxlength="20" readonly><?php echo $find[0][3] ?></textarea>
+				</p>
+			</form>
+				<input type="button" value="Hide here!!" onclick="disappear(this)"/>
+		</div>
+		<script>
+			function appear(ev){
+				let box = document.getElementById("fltab");
+				if(ev){
+					box.removeAttribute("hidden");
+					box.style.transition = "all 5s"
+					box.style.display= "initial";
+					//alert("Button has been pressed!");
+				}
+			}
+			function disappear(ev){
+				let box = document.getElementById("fltab");
+				if(ev){
+					box.style.display = "none"
+				}
+			}
+		</script>
 
 	</div>  <!--container end -->
 	<div style="clear;both"></div>

@@ -26,7 +26,6 @@
 			</ul>
 	    </nav>
 
-
 	<div id="container">
 		
 		<section id= "secbox">
@@ -64,10 +63,10 @@
 			<p>Print your daily task with just one click.</p>
 		</section>
 		
-	</div><!--container end -->
+	</div>
 	<div style="clear;both"></div>
 	<footer>
-		Copyright &copy; 2016, IWOMI TASKING
+		Copyright &copy; 2022, IWOMI TASKING
 	</footer>
 </body>
 </html>

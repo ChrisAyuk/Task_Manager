@@ -93,12 +93,17 @@ table td, th {
 	border-collapse: collapse;
 	border:1px solid #e7e7e7;
 	text-align :center;
-	padding-right:5px;
+	/* padding-right:5px; */
 	float : center;
 }
-
-table td#state{
-	color: red;
+table tr:hover, .undone:hover, .done:hover{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.055) 0 0);
+}
+.undone{
+	background: rgba(255, 0, 0, 0.1);
+}
+.done{
+	background: rgba(104, 158, 47, 0.15);
 }
 
 #calendar{
@@ -120,7 +125,10 @@ h1 > img{
 }
 
 h2{
+	font-size: 25px;
 	padding-bottom:10px;
+	padding-left: 5px;
+	font-weight: bolder;
 }
 
 h3{
@@ -142,6 +150,9 @@ p{
 }
 
 label{
+	font-size: 15px;
+	font-weight: bold;
+	color:#3d5721;
 	display:inline-block;
 	width:150px;
 }
@@ -168,9 +179,9 @@ header >h1{
 }
 
 header >h2{
-	float:right;
-	color:#A9D1FA;
+	float:left;
 	padding:40px 20px 0 0;
+	left: 20px;
 }
 
 header >h1 span.blue-text{
@@ -319,20 +330,22 @@ section{
 	 margin-top: 10vh;
 	 min-height: 90vh;
 	 width: 78%;
+	 margin-left: 230px;
+	 align-self: center;
 }
 
 #container .content .cards{
 	padding: 20px 15px;
 	display: flex;
-	min-width: 250px;
+	min-width: 200px;
 	align-items: center;
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
 
 #container .content .cards .card{
-	min-width: 250px;
-	width: auto;
+	min-width: 200px;
+	width: 100px;
 	min-height: 150px;
 	height: auto;
 	background: #ffffff;
@@ -346,8 +359,7 @@ section{
 
 #container .content #card{
 	min-height: 45vh;
-	min-width: 150vh;
-	
+	min-width: 120vh;
 }
 
 #container .content .content-2{
@@ -357,22 +369,6 @@ section{
 	align-items: flex-start;
 	flex-wrap: wrap;
 	border-radius: 10px;
-}
-
-#container .content .content-2 .table1{
-	min-height: 50vh;
-	flex: 5;
-	background: #ffffff;
-	margin: 0px 25px 25px 25px;
-	box-shadow: 0px 4px 8px 0px rgb(0, 0, 0, 0.2), 0px 6px 20px 0px rgb(0, 0, 0, 0.19);
-}
-
-#container .content .content-2 .table2{
-	flex: 2;
-	background: #ffffff;
-	min-height: 50vh;
-	margin: 0px 25px;
-	box-shadow: 0px 4px 8px 0px rgb(0, 0, 0, 0.2), 0px 6px 20px 0px rgb(0, 0, 0, 0.19);
 }
 
 .tblhd{
@@ -397,7 +393,7 @@ section{
 
 .table1>table>th, td{
 	text-align: center;
-	padding: 8px;
+	padding: 1px 6px;
 }
 
 .grid {
@@ -406,7 +402,7 @@ section{
 	width: 60%;
 	height: 300px;
 	margin-top: 100px;
-	margin-left: 10%;
+	margin-left: 25%;
 	/* border: 1px solid #54782E; */
 	grid-template-columns: auto auto auto;
 	background-color: transparent;
@@ -416,6 +412,7 @@ section{
 	background-color: #afca91;
 	width: 80%;
 	display: flex;
+	flex-direction: column wrap;
 	padding: 20px;
 	padding-top: 30%;
 	font-family: 'Courier New', Courier, monospace;
@@ -446,7 +443,7 @@ section{
 	 
 	 float:right;
 	
-	 margin-top:-10px;
+	 margin-top:-20px;
 
 }
 
@@ -464,7 +461,7 @@ section{
 }
 
 #newtm:hover{
-	background: #3d5721;
+	background-image: linear-gradient(rgba(0, 0, 0, 05) 0 0);
 	cursor: pointer;
 }
 
@@ -491,16 +488,63 @@ footer{
     background-color: #54782E; /* Green */
     border: none;
     color: white;
-    padding: 5px 32px;
+    padding: 8px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
-	border-radius: 5px;
+	border-radius: 3px;
+}
+.button:hover{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+	cursor: pointer;
+}
+
+.delete {
+    background-color: #E23D32;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 4px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+	border-radius: 3px;
+}
+.delete:hover{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+	cursor: pointer;
+}
+
+.append {
+    background-color: #23b9df;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 4px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+	border-radius: 3px;
+}
+.append:hover{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+	cursor: pointer;
+}
+.append:active{
+	background-image: linear-gradient(rgba(255, 255, 255, 0.2) 0 0);
 }
 
 .buttongreen {
@@ -508,24 +552,117 @@ footer{
     color: black;
     border: 2px solid #54782E;
 }
-
 .buttongreen:hover {
     background-color: #54782E;
     color: white;
+	cursor: pointer;
 }
 
 
 
-input[type=button], input[type=submit], input[type=reset] , input[type=return]{
+input[type=button]{
     background-color: #54782E;
     border: none;
     color: white;
     padding: 8px 32px;
     text-decoration: none;
+	font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-	border-radius: 5px;
+	border-radius: 3px;
+}
+input[type=button]:hover{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+	cursor: pointer;
+}
+
+input[type=date], input[type=datetime-local]{
+	width: 99%;
+	height: 40px;
+	font-size: 18px;
+	padding-left: 5px;
+	border: none;
 }
 
 
+input[type=text], input[type=email], input[type=password]{
+	width: 99%;
+	height: 40px;
+	font-size: 18px;
+	padding-left: 10px;
+	padding-right: 0px;
+	text-align:left;
+	border: none;
+}
 
+
+textarea{
+	width: 99%;
+	height: 60px;
+	font-size: 15px;
+	text-align:left;
+	padding-left: 10px;
+	border: none;
+}
+select{
+	width: 75%;
+	height: 40px;
+	font-size: 15px;
+	padding: 0px 10px;
+	border: 1px solid rgb(143, 143, 143);
+	border-radius: 3px;
+}
+.icon select{
+	width: 100px;
+}
+label select{
+	width: 200px;
+}
+
+.member{
+	list-style:none;
+	padding-top:10px;
+	padding-bottom: 5px;
+	padding-left: -10px;
+	/* line-height: 30px; */
+	font-size: 17pt;
+	font-weight: bolder;
+}
+
+.add{
+    background-color: #54782E;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 12pt;
+	font-weight: bold;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+	border-radius: 3px;
+	float: right;
+}
+.add:hover{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0 0);
+	cursor: pointer;
+}
+
+#fltab{
+	position: absolute;
+	float: right;
+	overflow: auto;
+	padding-top:20px;
+	padding-bottom: 20px;
+	padding-right: 80px;
+	padding-left: 80px;
+	color:black;
+	top:100px;
+	right: 15%;
+	background-color:#cbe7ace3;
+	width: 50%;
+	height: 70%;
+	border-radius: 5px;
+	transition: 5s;
+	display: none;
+}

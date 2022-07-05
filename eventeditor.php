@@ -32,6 +32,7 @@
 			<nav id="leftmenu">
 				<a href = "dashboard.php"><h3>Dashboard</h3></a>
 				<ul>
+					<li><a href="manageUser.php">Manage Interns</a></li>
 					<li><a href="view.php">Manage Task</a></li>
 					<li><a href="manageteams.php">Teams</a></li>
 				</ul>
@@ -83,18 +84,17 @@
 		
 		
 		<tr>
-		 <td><input type = 'submit' value='Update' name='update'/></td> 
-		 <td><input type = 'reset'  value='Clear'/></td>
-		 <td><input type = 'return'  value='Back' onclick=history.back();return true;/></td>
+		 <td><input type = 'submit' value='Update' name='update' class='append'/></td> 
+		 <td><input type = 'reset'  value='Clear' class='delete'/></td>
+		 <td><input type = 'button'  value='Back' onclick=history.back();return true;/></td>
 		</tr>
 		
 		
 		
 		</table>
 		
-	
 		
-			
+				
 </form>
 
 	

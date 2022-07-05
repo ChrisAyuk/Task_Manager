@@ -42,8 +42,8 @@
 			 
 			<h2>Amazing tools to help you get things done</h2>
 			<p>We are a chiefly remote team from Malaysia.</p>
-			<h1>Our mission is to
-			help people organize their task easily so they can make the most of their potential.</h1>
+			<h3>Our mission is to
+			help people organize their task easily so they can make the most of their potential.</h3>
 			 
 			 
 		</section> 
@@ -51,7 +51,7 @@
 	</div><!--container end -->
 	<div style="clear;both"></div>
 	<footer>
-		Copyright &copy; 2016, IWOMI TASKING
+		Copyright &copy; 2022, IWOMI TASKING
 	</footer>
 </body>
 </html>

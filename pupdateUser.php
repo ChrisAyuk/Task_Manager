@@ -6,14 +6,16 @@
 	$username = $_POST['username'];
 	$email = $_POST['userEmail'];
 	$password = $_POST['userPass'];
-	$status = $_POST['status'];
-	$type = $_POST['type']; 
+	$team = $_POST['team'];
 	
-	 $sql = "UPDATE user SET username = '$username', user_email = '$email' ,user_password= '$password',
-				user_status='$status',user_type= '$type' WHERE user_id = '$id' ";
-	
-	
+	$sql = "UPDATE intern SET username = '$username', int_email = '$email' ,int_pass= '$password', team_id = '$team'
+				 WHERE intern_id = '$id' ";
 	mysqli_query($con, $sql);
+
+	$sql1 = "UPDATE grouping SET team_id = '$team' WHERE intern_id = '$id' ";
+	mysqli_query($con, $sql1);
+
+
 	echo "<script>window.alert ('User Updated!');window.location.href = 'manageUser.php';</script>";
 
 	

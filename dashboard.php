@@ -54,7 +54,7 @@
 		<div class="grid">
 			<a href="manageUser.php"><div class="grid-item" ><img src="pictures/internship.png" width ="70" height = "70">	Manage Interns</div></a>
 			<a href="manageteams.php"><div class="grid-item" ><img src="pictures/group.png" width ="70" height = "70">	Control Teams</div></a>
-			<a href="view.php"><div class="grid-item"><img src="pictures/task.png" width ="70" height = "70">	View Tasks</div></a>
+			<a href="view.php"><div class="grid-item"><img src="pictures/task.png" width ="78" height = "78">	View Tasks</div></a>
 		</div>
 
 	</div><!--container end -->
