@@ -15,7 +15,7 @@
 	  
 		<nav id="menu">
 			<ul>
-				<li class="menuitem"><a href="index.php">Daily Task Planner</a></li>
+				<li class="menuitem"><a href="index.php"><img src = "pictures/iwomi-smaller.png" ></a></li>
 				<li class="menuitem"><a href="about.php">About Us</a></li>
 				<li class="menuitem"><a href="contact.php">Contact Us</a></li>
 				<li>
@@ -32,23 +32,27 @@
 			<nav id="leftmenu">
 				<a href = "dashboard.php"><h3>Dashboard</h3></a>
 				<ul>
-					<li><a href="view.php">Manage Task</a></li>
-					<li><a href="manageteams.php">Teams</a></li>
+					<a href="manageUser.php"><li>Manage Interns</li></a>
+					<a href="manageteams.php"><li>Teams</li></a>
+					<a href="view.php"><li>Manage Task</li></a>
 				</ul>
 			</nav>
 		</aside>  
 		
 		<section>
-			
-		<table id = "view" border='1' cellspacing='0' cellpadding='0' align=center>
+		
+		<div class="content-2">
+		<table align=center>
 		<tr align= 'center'>
-			<th>TaskID</th>
-			<th>Task</th>
-			<th>DateAdded</th>
-			<th>Due Date</th>
-			<th>Details</th>
-			<th>State</th>
-			<th>Edit</th>
+			<thead>
+				<th>TaskID</th>
+				<th>Task</th>
+				<th>DateAdded</th>
+				<th>Due Date</th>
+				<th>Details</th>
+				<th>State</th>
+				<th>Edit</th>
+			</thead>
 		</tr>
 <?php
    
@@ -60,7 +64,7 @@
 
 	$info = mysqli_query($con, $sql);
 	
-	$userid = $_SESSION['login_user']; //not sure whether this will work
+	//$userid = $_SESSION['login_user']; //not sure whether this will work
    
 	while($row= mysqli_fetch_array($info))
 	{
@@ -72,24 +76,21 @@
 	   echo "<td>".$row['due_date']."</td>";
 	   echo "<td>".$row['Details']."</td>";
 	   echo "<td id='state'>".$row['status']."</td>";
-	   echo "<td><a href=eventeditor.php?id=".$row['TaskID'].">Edit</a></td>";
+	   echo "<td><a href=eventeditor.php?id=".$row['TaskID']." class='button'>Edit</a></td>";
 	   echo "</tr>";
 	}
 	
 	
    ?>
-   <tr>
-   <td><input type='button' value='Add Task' name='add' onclick="window.location.href='eventadder.php'"></td>
-   </tr>
    
    </table>
+   </div>
+
+   <input type='button' value='Add Task' name='add' onclick="window.location.href='eventadder.php'">
 			 
 		</section>
-	</div><!--container end-->
+	</div><!--container end -->
 	<div style="clear;both"></div>
-	<footer>
-		Copyright &copy; 2016, Daily Task Planner
-	</footer>
 </body>
 <!--<h1>Welcome  <?php echo $login_session; ?></h1>-->
 </html>

@@ -14,7 +14,7 @@
 	  
 		<nav id="menu">
 			<ul>
-				<li class="menuitem"><a href="index.php">Daily Task Planner</a></li>
+				<li class="menuitem"><a href="index.php"><img src = "pictures/iwomi-smaller.png" ></a></li>
 				<li class="menuitem"><a href="about.php">About Us</a></li>
 				<li class="menuitem"><a href="contact.php">Contact Us</a></li>
 				<li>
@@ -50,7 +50,7 @@
 			?>
 			
 			<form method = "post" action = "pupdateUser.php">
-				 <input type = "hidden" name = "id" value = "<?php echo $st_row['intern_id'] ?>"> 
+				 <input type = "hidden" name = "id" value = "<?php echo $st_row['intern_id'] ?>" readonly> 
 				
 				
 				<p>
@@ -75,11 +75,9 @@
 			
 			</form>	
 		</section>
-	</div><!--container end-->
+	</div><!--container end -->
 	<div style="clear;both"></div>
-	<footer>
-		Copyright &copy; 2016, Daily Task Planner
-	</footer>
+	
 </body>
 
 </html>

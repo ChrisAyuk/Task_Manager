@@ -4,14 +4,17 @@
 }
 
 body{
+	overflow: auto;
 	margin:0;
 	padding:0;
 	text-align:left;
-	font-size:13px;
-	font-family:arial,helvetica, sens-serif;
+	font-size:11pt;
+	font-family:Georgia, 'Times New Roman', Times, serif;
 	color:#000000;
-	background-color:#ffffff;
-	 
+	background-color: #ffffff;
+	align-items: center;
+	font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 a{
@@ -62,15 +65,11 @@ label{
 }
 
 /* Main styles */
-#container{
-	width:960px;
-	overflow:auto;
-}
 
 header{
-	width:960px;
+	width: 100%;
 	height:85px;
-	 
+	background-color: #ffffff;
 	 
 }
 
@@ -100,8 +99,14 @@ nav#menu{
 	display:block;
 	float:left;
 	clear:both;
-	width:960px;
-	height:54px;
+	position: absolute;
+	width:100%;
+	height:auto;
+	background-color: #ffffff;
+	box-shadow: 3px 3px 15px 20px rgb(228, 228, 228);
+}
+nav#homepic{
+	float: left;
 }
 
 nav#menu ul{
@@ -120,7 +125,7 @@ nav#menu li{
 
 nav#menu li a,#menu li a:visited{
 	float:left;
-	color:#ffffff;
+	color:#000;
 	text-decoration:none;
 	text-align:center;
 	font-size:15px;
@@ -128,137 +133,54 @@ nav#menu li a,#menu li a:visited{
 	padding:0 13px 0 13px;
 }
 
-nav#leftmenu{
-	margin-top:15px;
-	width:190px;
-	float:left;
-	background:#1C478E;
-	border-radius:10px;
-	padding: 15px 20px 10px 10px;
+ div#container{
+	width:960px;
+	overflow: auto;
+	padding-top: 25px;
+	
 }
 
-nav#leftmenu ul{
-	list-style:none;
-	padding:0;
-}
-
-nav#leftmenu  li{
-	list-style:none;
-	padding:15px 0 8px 0;
-	border-bottom:1px dashed #fff;
-}
-
-nav#leftmenu a,nav#leftmenu a:visited{
-	color:#ffffff;
-	text-decoration:none;
-	font-weight:bold;
-	font-size:14px;
-}
-
-nav#leftmenu h3{
-	color:#ffffff;
-	padding:0;
-	padding-bottom:8px;
-	border-bottom:#fff solid 2px;
-	font-size:16px;
-}
 
 section{
 	display:block;
 	width:680px; 
-	/*margin-top:15px;*/
+	margin-top:15px;
 	float:left;
 	background:#ffffff;
-	/*border-radius:10px;*/
-	/*border:6px solid #1C478E;*/
+	border-radius:5px;
+	/*border:6px solid #54782E;*/
 	padding:15px;
-	/*margin-left:15px;*/
+	margin-left:20px;
+	margin-top: 125px;
 }
 
 section#about{
 	width:830px;
-	height:500px;
+	height:390px;
 	border-radius:10px; 
-	border:6px solid #1C478E;	
+	border:1px solid #54782E;	
 }
 
 section#dashboard{
 	width:960px;
 	height:500px;
 	border-radius:10px; 
-	border:6px solid #1C478E;	
+	border:1px solid #54782E;	
 	margin-left:15px; 
 	margin-top:15px; 
 	 
 }
 
-
-
-section#one{
-	background:#fdff00;
-	width:400px;
-	height:120px;
+section#secbox{
+	background:#e4e4e4;
+	width:270px;
+	height:180px;
 	
 }
 
-section#one:hover{
-	background:	#ffe6ee;
-	 
-}
+section#secbox:hover{
 
-section#two{
-	background:#b0d8d6;
-	width:400px;
-	height:120px;
-}
-
-section#two:hover{
-	background:#dad1ec;
-	 
-}
-
-section#three{
-	background:#efa299;
-	width:400px;
-	height:120px;
-}
-
-section#three:hover{
-	background:	#d2ddcf;
-	 
-}
-
-section#four{
-	background:#aaaaaa;
-	width:400px;
-	height:120px;
-}
-
-section#four:hover{
-	background:#73d4f4;
-	 
-}
-
-section#five{
-	background:#bf9fb0;
-	width:400px;
-	height:120px;
-}
-
-section#five:hover{
-	background:#ffffe4;
-	 
-}
-
-section#six{
-	background:#5ddf9b;
-	width:400px;
-	height:120px;
-}
-
-section#six:hover{
-	background:	#feecd4;
-	 
+	box-shadow: 0px 1px 15px 3px rgb(228, 228, 228);
 }
 
 .float{
@@ -267,32 +189,35 @@ section#six:hover{
 }
 
 .signin{
-	 
 	 float:right;
 	 margin-top:-30px;
+
 
 }
 
 .signup{
-	 
 	 float:right;
 	 margin-right:90px;
 	 margin-top:-30px;
 
 }
 footer{
+	position: fixed;
+	bottom: 0;
 	width:100%;
-	background:#000;
+	background:#222323;
 	color:#fff;
-	height:30px;
+	height: 40px;
 	text-align:center;
 	margin-top:20px;
+	margin-bottom: 0px;
 	padding-top:15px;
+	padding-bottom: 0px;
 }
 
 
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: #54782E; /* Green */
     border: none;
     color: white;
     padding: 10px 32px;
@@ -307,24 +232,26 @@ footer{
 }
 
 .buttongreen {
+	border-radius: 5px;
     background-color: white;
     color: black;
-    border: 2px solid #4CAF50;
+    border: 2px solid #54782E;
 }
 
 .buttongreen:hover {
-    background-color: #4CAF50;
+    background-color: #54782E;
     color: white;
 }
 
 input[type=button], input[type=submit], input[type=reset] {
-    background-color: #4CAF50;
+    background-color: #54782E;
     border: none;
     color: white;
     padding: 8px 32px;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+	border-radius: 5px;
 }
 form.form{
 	width: 100%;

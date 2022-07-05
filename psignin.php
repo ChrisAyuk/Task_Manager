@@ -4,26 +4,28 @@ include("connection.php");
 if(isset($_POST['btnSignIn'])){
 	$email = $_POST['email'];
 	$password = $_POST['password'];
-	$sql = "SELECT * FROM user WHERE user_email='$email' and user_password='$password'"; 
-  	
-	$result = mysqli_query($con, $sql) or die(mysqli_error($con)); 
-  	$row =  mysqli_fetch_assoc($result);
-  	$active = $row['user_status'];
-	$type = $row['user_type'];
-  	$count = mysqli_num_rows($result);
-  	if($count == 1){
-		if($type == 1 && $active == 'active'){
-			$_SESSION['login_user'] = $row['username'];
-			$_SESSION['login_id'] = $row['user_id'];
-			header("location:userdashboard.php");
-		} elseif ($type== 1 && $active == 'inactive') {
-			$error = "Your account innactive, please contact us for further details";
-			echo "<script>alert('".$error."'); window.location.href = 'contact.php';</script>";
-			
-		} else {
+	$sql1 = "SELECT * FROM intern WHERE int_email='$email' and int_pass='$password'";
+	$sql2 = "SELECT * FROM supervisor WHERE sup_email='$email' and sup_pass='$password'"; 
+
+	$result1 = mysqli_query($con, $sql1) or die(mysqli_error($con));
+	$result2 = mysqli_query($con, $sql2) or die(mysqli_error($con));
+  	$row1 =  mysqli_fetch_assoc($result1);
+	$row2 =  mysqli_fetch_assoc($result2);
+
+  	//$active = $row['user_status'];
+	//$type = $row['user_type'];
+  	$count1 = mysqli_num_rows($result1);
+	$count2 = mysqli_num_rows($result2);
+
+  	if($count1 == 1 || $count2 == 1){
+		if($count1 == 1 ){
+			$_SESSION['login_user'] = $row1['username'];
+			$_SESSION['login_id'] = $row1['intern_id'];
+			header("location:userdashboard.php");	
+		} elseif($count2 == 1) {
 		
-			$_SESSION['login_user'] = $row['username'];
-			$_SESSION['login_id'] = $row['user_id'];
+			$_SESSION['login_user'] = $row2['username'];
+			$_SESSION['login_id'] = $row2['sup_id'];
 			header("location:dashboard.php");
 		}
 		

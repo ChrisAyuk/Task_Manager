@@ -6,15 +6,10 @@
 	<title>Contact</title>
 </head>
 <body>
-	<div id="container">
-		<header>
-			 <a href = "index.php"><h1>Daily Task Planner</h1></a>
 			
-		</header>
-		 
-		
-		<nav id="menu">
+<nav id="menu">
 			<ul>
+				<li class="homepic"><a href = "index.php"><h1><img src = "pictures/iwomi.png"></h1></a></li>
 				<li class="menuitem"><a href="index.php">Home</a></li>
 				<li class="menuitem"><a href="about.php">About Us</a></li>
 				<li class="menuitem"><a href="contact.php">Contact Us</a></li>
@@ -30,6 +25,8 @@
 			</ul>
 	    </nav>
 		 
+	<div id="container">
+
 		 <!--<aside>
 			<nav id="leftmenu">
 			<h3>Dashboard</h3>
@@ -89,10 +86,10 @@
 		
 		 
 		
-	</div><!--container end-->
+	</div><!--container end -->
 	<div style="clear;both"></div>
 	<footer>
-		Copyright &copy; 2016, Daily Task Planner
+		Copyright &copy; 2016, IWOMI TASKING
 	</footer>
 </body>
 </html>

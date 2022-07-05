@@ -17,7 +17,7 @@
 	  
 		<nav id="menu">
 			<ul>
-				<li class="menuitem"><a href="index.php">Daily Task Planner</a></li>
+				<li class="menuitem"><a href="index.php"><img src = "pictures/iwomi-smaller.png" ></a></li>
 				<li class="menuitem"><a href="about.php">About Us</a></li>
 				<li class="menuitem"><a href="contact.php">Contact Us</a></li>
 				<li>
@@ -34,9 +34,9 @@
 			<nav id="leftmenu">
 				<a href = "dashboard.php"><h3>Dashboard</h3></a>
 				<ul>
-					<li><a href="manageUser.php">Manage User</a></li>
-					<li><a href="manageteams.php">Teams</a></li>
-					<li><a href="view.php">Manage task</a></li>	 
+					<a href="manageUser.php"><li>Manage User</li></a>
+					<a href="manageteams.php"><li>Teams</li></a>
+					<a href="view.php"><li>Manage task</li></a>	 
 				</ul>
 			</nav>
 		</aside>  
@@ -47,7 +47,7 @@
 		
 			<h1>User Records</h1>
 		 	
-			<table border= "1"> 
+			<table> 
 				<tr>
 				<thead>
 					<th>Intern ID</th>
@@ -74,7 +74,7 @@
 						<td>",$row['int_email'],"</td>
 						<td>",$row['int_pass'],"</td>
 						<td>",$row['team_id'],"</td>
-						<td><a href ='updateUser.php? epr=update&id=",$row['intern_id'],"'>Edit</a></td> 
+						<td><a href ='updateUser.php? epr=update&id=",$row['intern_id'],"' class='button'>Edit</a></td> 
 					</tr>";
 				
 			}
@@ -90,7 +90,7 @@
 			
 		</section>
 		
-	</div><!--container end-->
+	</div><!--container end -->
 	<div style="clear;both"></div>
 </body>
 <!--<h1>Welcome  <?php echo $login_session; ?></h1>-->

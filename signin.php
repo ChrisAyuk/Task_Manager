@@ -10,29 +10,25 @@
 	<title>Sign in</title>
 </head>
 <body>
-	<div id="container">
-		<header>
-			<a href = "index.php"><h1>Daily Task Planner</h1></a>
-			
-		</header>
-		 
-		
-		<nav id="menu">
+<nav id="menu">
 			<ul>
+				<li class="homepic"><a href = "index.php"><h1><img src = "pictures/iwomi.png"></h1></a></li>
 				<li class="menuitem"><a href="index.php">Home</a></li>
 				<li class="menuitem"><a href="about.php">About Us</a></li>
 				<li class="menuitem"><a href="contact.php">Contact Us</a></li>
 				<li>
 					<ul>
-						<li class ="signup"><a href = "regUser.php"><button class = "button buttongreen">Sign up</button></a>
+						<li class ="signup" ><a href = "regUser.php"><button class = "button buttongreen">Sign up</button></a>
 						</li>
-						<li class ="signin"><a href = "signin.php"><button class = "button buttongreen">Sign in</button></a>
+						<li class ="signin" style="color='#54782E'"><a href = "signin.php"><button class = "button buttongreen">Sign in</button></a>
 						</li>
 					</ul>		
 				</li>
 				
 			</ul>
 	    </nav>
+	<div id="container">
+	
 		
 	<section id="about">
 		<div>
@@ -61,10 +57,10 @@
 		</div>
 		
 	</section>
-	</div><!--container end-->
+	</div><!--container end -->
 	<div style="clear;both"></div>
 	<footer>
-		Copyright &copy; 2016, Daily Task Planner
+		Copyright &copy; 2016, IWOMI TASKING
 	</footer>
 </body>
 </html>	

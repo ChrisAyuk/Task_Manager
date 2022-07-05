@@ -6,15 +6,10 @@
 	<title>About</title>
 </head>
 <body>
-	<div id="container">
-		<header>
-			<a href = "index.php"><h1>Daily Task Planner</h1></a>
 			
-		</header>
-		 
-		
-		<nav id="menu">
+<nav id="menu">
 			<ul>
+				<li class="homepic"><a href = "index.php"><h1><img src = "pictures/iwomi.png"></h1></a></li>
 				<li class="menuitem"><a href="index.php">Home</a></li>
 				<li class="menuitem"><a href="about.php">About Us</a></li>
 				<li class="menuitem"><a href="contact.php">Contact Us</a></li>
@@ -30,6 +25,8 @@
 			</ul>
 	    </nav>
 		 
+	<div id="container">
+
 		 <!--<aside>
 			<nav id="leftmenu">
 			<h3>Dashboard</h3>
@@ -45,18 +42,16 @@
 			 
 			<h2>Amazing tools to help you get things done</h2>
 			<p>We are a chiefly remote team from Malaysia.</p>
-			<h1><mark>Our mission is to
-			help people organize their task easily so they can make the most of their potential.</mark></h1>
+			<h1>Our mission is to
+			help people organize their task easily so they can make the most of their potential.</h1>
 			 
 			 
-		</section>
+		</section> 
 		
-		 
-		
-	</div><!--container end-->
+	</div><!--container end -->
 	<div style="clear;both"></div>
 	<footer>
-		Copyright &copy; 2016, Daily Task Planner
+		Copyright &copy; 2016, IWOMI TASKING
 	</footer>
 </body>
 </html>
