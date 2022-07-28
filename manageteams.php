@@ -17,6 +17,10 @@
 	on tb1.intern_id = tb2.intern_id where tb2.super_id='".$_SESSION['login_id']."'";
   $newmem = mysqli_query($con, $new) or die( mysqli_error($con));
   //$fetch = mysqli_fetch_array($newmem);
+
+  $add= "SELECT * from intern as tb1 inner join supervision as tb2
+	on tb1.intern_id = tb2.intern_id where tb2.super_id='".$_SESSION['login_id']."'";
+  $addmem = mysqli_query($con, $add) or die( mysqli_error($con));
   
   $que= "SELECT distinct username from intern as tab1 inner join grouping as tab2
 	on tab1.team_id = tab2.team_id where tab1.team_id='".$irow['team_id']."'";
@@ -165,16 +169,17 @@
 						<ul>
 						<?php
 							//echo "<script>alert('".$fetch['username']."')</script>";
-							while($fetch=mysqli_fetch_array($newmem)){
-								echo "<li><input type='checkbox' name='nteam' value='".$row['username']."' maxlength='20' required/>&nbsp;".$mrow['username']."</li>";
-								echo "<script>alert('The loop is suppose to load!')</script>";
+							while($fetch=mysqli_fetch_array($addmem)){
+								echo "<li class='member'><input type='checkbox' name='nteam' value='".$fetch['username']."' maxlength='20' required/>&nbsp;".$fetch['username']."</li>";
+								//echo "<script>alert('The loop is suppose to load!')</script>";
 							}
-							echo "<li><input type='checkbox' name='nteam' value='".$fetch['username']."' maxlength='20' required/>&nbsp;",$mrow['username'],"</li>";
+							//echo "<li><input type='checkbox' name='nteam' value='".$fetch['username']."' maxlength='20' required/>&nbsp;",$mrow['username'],"</li>";
 						?>
 						</ul>
 				</p>
 			</form>
-			<input type="button" value="Hide here!!" onclick="disappear(this)"/>
+			<br><br>
+			<input type="button" value="Group them" onclick="disappear(this)"/>
 		</div>
 		<script type="text/javascript">
 			function appear(ev){

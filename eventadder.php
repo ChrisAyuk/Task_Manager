@@ -52,8 +52,8 @@
 				<a href = "dashboard.php"><h3>Dashboard</h3></a>
 				<ul>
 					<li><a href="manageUser.php">Manage Interns</a></li>
-					<li><a href="view.php">Manage Task</a></li>
 					<li><a href="manageteams.php">Teams</a></li>
+					<li><a href="view.php">Manage Task</a></li>					
 				</ul>
 			</nav>
 		</aside>  
@@ -64,7 +64,7 @@
 <form name = 'eventadder' method ='POST' action ="insert.php">
 
 	<header>
-	 <h2>Task Form</h2>
+	 <h2>Create Task</h2>
 	</header>
 	
 	   <table width = '100%'>

@@ -105,41 +105,32 @@
 				<div class="table1">
 					<div class="tblhd">
 						<h2>Tasks</h2>
-						<a href="#" class="button">View All</a>
+						<!-- <a href="#" class="button">View All</a> -->
 					</div>
 					<table>
 						<tr>
 							<th>Task</th>
 							<th>Date Added</th>
-							<th>Due Date</th>
+							<th>Due Date</th> 
 							<th>Details</th>
 							<th>State</th>
 							<th>Action</th>
 						</tr>
-						<tr>
-							<td>Basic Java</td>
-							<td>07-06-2022</td>
-							<td>15-06-2022</td>
-							<td>Learn basuc java in just a week!</td>
-							<td>NOT DONE</td>
-							<td><a href="#" class="button">Edit</a></td>
-						</tr>
 						<?php 
 							$i = 0;
 							while($row= mysqli_fetch_array($info))
-							{								
+							{						
 								if($row['status']=="NOT DONE"){$class = "undone";}else{$class="done";}																		
 	  							echo "<tr class=".$class.">";
-	  							//echo "<td>".$row[php $userid]."</td>"; //not sure whether this will work
 	   							//echo "<td>".$row['TaskID']."</td>";
-	   							echo "<td>".$row['Task']."</td>"; $find[0][0] = $row['Task'];
-	   							echo "<td>".$row['DateAdded']."</td>";	$find[0][1] = $row['DateAdded'];
-	  							echo "<td>".$row['due_date']."</td>";	$find[0][2] = $row['due_date']; 
-	  							echo "<td>".$row['Details']."</td>";	$find[0][3] = $row['Details'];
-	   							echo "<td >".$row['status']."</td>";	$find[0][4] = $row['status'];
-	   							echo "<td><div id=".$row['TaskID']." class='button' onclick='appear(this)'>View</div></td>";
-	   							echo "</tr>";
-								
+	   							echo "<td>".$row['Task']."</td>"; $find[$i][0] = $row['Task'];
+	   							echo "<td>".$row['DateAdded']."</td>";	$find[$i][1] = $row['DateAdded'];
+	  							echo "<td>".$row['due_date']."</td>";	$find[$i][2] = $row['due_date']; 
+	  							echo "<td>".$row['Details']."</td>";	$find[$i][3] = $row['Details'];
+	   							echo "<td >".$row['status']."</td>";	$find[$i][4] = $row['status'];
+	   							echo "<td><div id=".$i." class='button' onclick='appear(this)'>View</div></td>";
+	   							echo "</tr>"; 
+								//echo "<script>alert(".count($row).");</script>";
 								$i++;
 							}
 							
@@ -151,27 +142,30 @@
 
 		<div id="fltab" > 
 			<form method="POST">
-				<h2>Create a Team</h2>
+				<h1>Create a Team</h1>
+				<br>
+				
 				<p>
-					<h1>Task:	</h1> <input type="text" name="tname" value="<?php echo $find[0][0] ?>" readonly/>
+					<h2>Task:	</h2> <input type="text" name="tname" value="<?php echo $find[0][0] ?>" readonly/>
 				</p>
 				<p>
-					<h1>Date Added:	</h1> <input type="date" name="adate" value="<?php echo $find[0][1] ?>" readonly/>
+					<h2>Date Added:	</h2> <input type="date" name="adate" value="<?php echo $find[0][1] ?>" readonly/>
 				</p>
 				<p>
-					<h1>Due Date:	</h1> <input type="datetime-local" name="fdate" value="<?php echo $find[0][2] ?>" readonly>
+					<h2>Due Date:	</h2> <input type="datetime-local" name="fdate" value="<?php echo $find[0][2] ?>" readonly>
 				</p>
 				<p>
-					<h1>Details:	</h1> <textarea name="details" maxlength="20" readonly><?php echo $find[0][3] ?></textarea>
+					<h2>Details:	</h2> <textarea name="details" maxlength="20" readonly><?php echo $find[0][3] ?></textarea>
 				</p>
 			</form>
-				<input type="button" value="Hide here!!" onclick="disappear(this)"/>
+			<br>
+				<input type="button" value="Mark Done!" onclick="disappear(this)"/>
 		</div>
 		<script>
 			function appear(ev){
 				let box = document.getElementById("fltab");
 				if(ev){
-					box.removeAttribute("hidden");
+					//box.removeAttribute("hidden");
 					box.style.transition = "all 5s"
 					box.style.display= "initial";
 					//alert("Button has been pressed!");

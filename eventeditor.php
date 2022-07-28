@@ -33,8 +33,8 @@
 				<a href = "dashboard.php"><h3>Dashboard</h3></a>
 				<ul>
 					<li><a href="manageUser.php">Manage Interns</a></li>
-					<li><a href="view.php">Manage Task</a></li>
 					<li><a href="manageteams.php">Teams</a></li>
+					<li><a href="view.php">Manage Task</a></li>					
 				</ul>
 			</nav>
 		</aside>  
@@ -54,7 +54,7 @@
 			 <input type="text" name = "id"value= "<?php echo $_GET['id'];?>" hidden>
 
 	<header>
-	 <h2>Task Edit</h2>
+	 <h2>Edit Task</h2>
 	<br>
 	</header>
 	
